@@ -20,6 +20,16 @@ uv run jupyter notebook  # Launch Jupyter for notebooks
 uv add <package>         # Add a new dependency
 ```
 
+## Linting
+
+```bash
+uv run ruff check .        # Lint (E/F/I rules)
+uv run ruff check --fix .  # Lint and auto-fix
+uv run ruff format .       # Format
+```
+
+Ruff is configured to lint `.ipynb` files as well. nbstripout is installed as a git filter to strip notebook outputs on commit. CI (`.github/workflows/lint.yml`) runs ruff and checks for unstripped notebook outputs on push/PR to main.
+
 ## Conventions
 
 - Topic directories are numbered and ordered by learning progression (e.g., `01_math_foundations/`, `02_classical_ml/`).
