@@ -9,6 +9,8 @@ dependencies = [
     "jupyter>=1.1.1",
     "matplotlib>=3.10.8",
     "numpy>=2.4.4",
+    "pandas>=3.0.2",
+    "scikit-learn>=1.8.0",
 ]
 
 [tool.ruff]
@@ -20,6 +22,7 @@ ignore = ["E501"]
 
 [dependency-groups]
 dev = [
+    "ipykernel>=7.2.0",
     "nbstripout>=0.9.1",
     "ruff>=0.15.9",
 ]
