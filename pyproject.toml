@@ -8,11 +8,19 @@ dependencies = [
     "altair>=6.1.0",
     "ipykernel>=7.2.0",
     "jupyter>=1.1.1",
+    "kagglehub>=1.0.1",
     "matplotlib>=3.10.8",
     "numpy>=2.4.4",
     "pandas>=3.0.2",
     "scikit-learn>=1.8.0",
+    "xgboost>=3.2.0",
 ]
+
+[tool.uv]
+# kagglehub 1.0.1 imports get_web_endpoint from kagglesdk.kaggle_env, which was
+# removed in kagglesdk 0.1.24. kagglehub's own pin (>=0.1.22) is too loose, so
+# cap the transitive dep at the last compatible release.
+constraint-dependencies = ["kagglesdk<0.1.24"]
 
 [tool.ruff]
 extend-include = ["*.ipynb"]
